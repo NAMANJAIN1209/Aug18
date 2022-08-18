@@ -1,0 +1,6 @@
+from sklearn.datasets import load_iris
+iris = load_iris()
+training_inp = iris.data[:100]
+testing_inp = iris.data[100:]
+training_target = iris.target[:100]
+testing_target  = iris.target[100:]
