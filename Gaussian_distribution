@@ -18,3 +18,10 @@ exp = expected_value(df['ND_random'])
 sd = standard_deviation(df['ND_random'],exp)
 print(f'Expected Value is : {exp},Standard deviation is {sd}')
   Expected Value is : 0.028762038338126152,Standard deviation is 0.9718333647588641
+
+df['Z_Score'] = (df['ND_random'] - exp)/sd 
+import matplotlib.pyplot as plt
+plt.hist(df['Z_Score'])
+plt.xlabel('Z_Score')
+plt.title('Z_Score of Normal Distribution')
+plt.show()
