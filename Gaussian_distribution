@@ -1,0 +1,6 @@
+import numpy as np
+import pandas as pd
+path = 'C:\\Users\\namanjain8\\Documents\\Python Scripts_Composite Analysis'
+filename = 'Gaussian_Distribution'
+gaussian_dist = np.random.normal(loc=0,scale=1,size=1000)
+(pd.DataFrame(gaussian_dist)).to_csv(path+'\\'+filename+'.csv',index=False)
