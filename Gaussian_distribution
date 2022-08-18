@@ -4,3 +4,17 @@ path = 'C:\\Users\\namanjain8\\Documents\\Python Scripts_Composite Analysis'
 filename = 'Gaussian_Distribution'
 gaussian_dist = np.random.normal(loc=0,scale=1,size=1000)
 (pd.DataFrame(gaussian_dist)).to_csv(path+'\\'+filename+'.csv',index=False)
+
+
+import pandas as pd
+path = path = 'C:\\Users\\namanjain8\\Documents\\Python Scripts_Composite Analysis'
+filename = 'Gaussian_Distribution'
+df = pd.read_csv(path+'\\'+filename+'.csv')
+df.rename(columns={'0':'ND_random'},inplace=True)
+expected_value = lambda values: sum(values)/len(values)
+standard_deviation = lambda values,expected_value: np.sqrt(sum([(v - expected_value)**2 for v in values])/len(values))
+
+exp = expected_value(df['ND_random'])
+sd = standard_deviation(df['ND_random'],exp)
+print(f'Expected Value is : {exp},Standard deviation is {sd}')
+  Expected Value is : 0.028762038338126152,Standard deviation is 0.9718333647588641
