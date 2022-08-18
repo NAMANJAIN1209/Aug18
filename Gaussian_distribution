@@ -25,3 +25,11 @@ plt.hist(df['Z_Score'])
 plt.xlabel('Z_Score')
 plt.title('Z_Score of Normal Distribution')
 plt.show()
+
+import scipy.stats as stats
+z_score = stats.zscore(df['ND_random'])
+import matplotlib.pyplot as plt
+plt.hist(z_score)
+plt.xlabel('Z_Score')
+plt.title('Z_Score of Normal Distribution')
+plt.show()
